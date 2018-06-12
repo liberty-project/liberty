@@ -168,6 +168,7 @@ bool HardFork::add(const cryptonote::block &block, uint64_t height)
 void HardFork::init()
 {
   CRITICAL_REGION_LOCAL(lock);
+  db.set_batch_transactions(true);
 
   // add a placeholder for the default version, to avoid special cases
   if (heights.empty())
@@ -219,7 +220,6 @@ uint8_t HardFork::get_block_version(uint64_t height) const
 bool HardFork::reorganize_from_block_height(uint64_t height)
 {
   CRITICAL_REGION_LOCAL(lock);
-  db.set_batch_transactions(true);
 
   if (height >= db.height())
     return false;
