@@ -1,6 +1,6 @@
 #define DEF_NAOS_VERSION_TAG "@VERSIONTAG@"
 #define DEF_NAOS_VERSION "0.1.0-master"
-#define DEF_NAOS_RELEASE_NAME "Flame of Freedom"
+#define DEF_NAOS_RELEASE_NAME "Ancient Temple"
 #define DEF_NAOS_VERSION_FULL DEF_NAOS_VERSION "-" DEF_NAOS_VERSION_TAG
 
 #include "version.h"
