@@ -796,8 +796,7 @@ namespace cryptonote
     bl.minor_version = 7;
     bl.timestamp = 0;
     bl.nonce = nonce;
-    //miner::find_nonce_for_given_block(bl, 1, 0);
-    bl.invalidate_hashes();
+    miner::find_nonce_for_given_block(bl, 1, 0);
     return true;
   }
   //---------------------------------------------------------------
