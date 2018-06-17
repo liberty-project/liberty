@@ -516,7 +516,7 @@ void cn_slow_hash<MEMORY,ITER,VERSION>::software_hash(const void* in, size_t len
 
 			int64_t q = n / (d | 5);
 			idx.as_qword(0) = n ^ q;
-			idx = scratchpad_ptr(d ^ q);
+			idx = scratchpad_ptr((~d) ^ q);
 		}
 
 		bx.load(idx);
@@ -546,7 +546,7 @@ void cn_slow_hash<MEMORY,ITER,VERSION>::software_hash(const void* in, size_t len
 
 			int64_t q = n / (d | 5);
 			idx.as_qword(0) = n ^ q;
-			idx = scratchpad_ptr(d ^ q);
+			idx = scratchpad_ptr((~d) ^ q);
 		}
 	}
 
